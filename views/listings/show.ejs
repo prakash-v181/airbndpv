@@ -16,7 +16,11 @@
         <p class="text-muted mb-1">
           Owned by
           <span class="fw-semibold">
-            <%= listing.owner && listing.owner.username ? listing.owner.username : "Host" %>
+            <% if (listing.owner && listing.owner.username) { %>
+              <%= listing.owner.username %>
+            <% } else { %>
+              Host
+            <% } %>
           </span>
         </p>
         <p class="mb-2"><%= listing.description %></p>
@@ -39,23 +43,32 @@
     </div>
   </div>
 
-  <!-- Side panel: reviews or actions -->
+  <!-- Side panel: actions + review form -->
   <div class="col-md-4">
-    <% if (currUser && listing.owner && String(currUser._id) === String(listing.owner._id)) { %>
+    <% 
+      // ✅ Check ownership safely:
+      // works if listing.owner is ObjectId OR populated user
+      let isOwner = false;
+      if (currUser && listing.owner) {
+        const ownerId = String(listing.owner._id || listing.owner);
+        const userId = String(currUser._id);
+        if (ownerId === userId) isOwner = true;
+      }
+    %>
+
+    <% if (isOwner) { %>
       <a href="/listings/<%= listing._id %>/edit" class="btn btn-warning w-100 mb-2">
         Edit listing
       </a>
-    <% } %>
 
-    <form
-      action="/listings/<%= listing._id %>?_method=DELETE"
-      method="POST"
-      onsubmit="return confirm('Are you sure?');"
-    >
-      <% if (currUser && listing.owner && String(currUser._id) === String(listing.owner._id)) { %>
+      <form
+        action="/listings/<%= listing._id %>?_method=DELETE"
+        method="POST"
+        onsubmit="return confirm('Are you sure you want to delete this listing?');"
+      >
         <button class="btn btn-danger w-100 mb-3">Delete listing</button>
-      <% } %>
-    </form>
+      </form>
+    <% } %>
 
     <div class="card border-0 shadow-sm">
       <div class="card-body">
@@ -106,7 +119,6 @@
   </div>
 </div>
 
-<!-- Existing reviews -->
 <hr class="my-4" />
 
 <h4 class="h5 mb-3">Reviews</h4>
@@ -117,7 +129,9 @@
         <div class="card border-0 shadow-sm">
           <div class="card-body">
             <p class="mb-1">
-              <strong><%= review.author && review.author.username ? review.author.username : "User" %></strong>
+              <strong>
+                <%= review.author && review.author.username ? review.author.username : "User" %>
+              </strong>
             </p>
             <p class="mb-1 text-muted-small">
               Rating: <%= review.rating %> / 5
