@@ -89,12 +89,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// ✅ HOME ROUTE – when user opens main URL
+// ✅ SINGLE HOME ROUTE – when user opens main URL
 app.get("/", (req, res) => {
-  // You can render a home.ejs if you have it:
-  // res.render("home");
-  // For now, redirect to listings:
-  res.redirect("/listings");
+  res.render("home"); // uses views/home.ejs
 });
 
 // Routers
@@ -102,7 +99,7 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-// ✅ 404 handler – for all unknown routes (fixed)
+// ✅ 404 handler – for all unknown routes
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
 });
@@ -113,17 +110,12 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { message });
 });
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
-
 // Port for Render / local
 const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
   console.log(`server is listening on port ${port}`);
 });
-
 
 
 // const express = require("express");
