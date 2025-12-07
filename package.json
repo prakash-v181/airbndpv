@@ -36,8 +36,6 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0",
-    "react-native-nitro-modules": "^0.25.2",
-    "react-typist": "^2.0.5",
     "resolve": "^1.22.10",
     "rollup-plugin-peer-deps-external": "^2.2.4"
   }
