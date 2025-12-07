@@ -1,0 +1,132 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="py-5">
+  <!-- Hero section -->
+  <section class="row align-items-center mb-5">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <h1 class="display-4 fw-bold mb-3">
+        Discover your next <span class="text-primary">WanderLust</span> stay
+      </h1>
+      <p class="lead text-muted mb-4">
+        Find unique stays, cozy homes, and unforgettable experiences across the world.
+      </p>
+      <a href="/listings" class="btn btn-primary btn-lg me-2">
+        Browse Listings
+      </a>
+      <a href="/listings/new" class="btn btn-outline-primary btn-lg">
+        List your property
+      </a>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card border-0 shadow-lg">
+        <img
+          src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg"
+          class="card-img-top"
+          alt="Travel"
+        />
+        <div class="card-body">
+          <h5 class="card-title mb-1">Weekend Escape</h5>
+          <p class="card-text text-muted mb-0">
+            Handpicked stays with great reviews and stunning views.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search / filter row -->
+  <section class="mb-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <form class="row g-3" action="/listings" method="GET">
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Location</label>
+            <input
+              type="text"
+              class="form-control"
+              name="location"
+              placeholder="Where are you going?"
+            />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Category</label>
+            <select class="form-select" name="category">
+              <option value="">Any</option>
+              <option value="Mountains">Mountains</option>
+              <option value="Beach">Beach</option>
+              <option value="City">City</option>
+              <option value="Forest">Forest</option>
+              <option value="Village">Village</option>
+            </select>
+          </div>
+          <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="fa-solid fa-magnifying-glass me-2"></i> Search stays
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured cards (static demo) -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="h4 mb-0">Popular stays</h2>
+      <a href="/listings" class="text-decoration-none">
+        View all <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img
+            src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg"
+            class="card-img-top"
+            alt="Cabin"
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-1">Cozy Mountain Cabin</h5>
+            <p class="card-text text-muted mb-2">Manali, India</p>
+            <p class="mb-0 fw-semibold">₹4,500 <span class="text-muted">night</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img
+            src="https://images.pexels.com/photos/331692/pexels-photo-331692.jpeg"
+            class="card-img-top"
+            alt="Beach house"
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-1">Sea View Apartment</h5>
+            <p class="card-text text-muted mb-2">Goa, India</p>
+            <p class="mb-0 fw-semibold">₹6,800 <span class="text-muted">night</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img
+            src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+            class="card-img-top"
+            alt="City loft"
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-1">Modern City Loft</h5>
+            <p class="card-text text-muted mb-2">Bengaluru, India</p>
+            <p class="mb-0 fw-semibold">₹5,200 <span class="text-muted">night</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
