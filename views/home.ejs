@@ -1,79 +1,88 @@
 <% layout('layouts/boilerplate') %>
 
-<section class="hero-section py-5">
-  <div class="row align-items-center g-4">
+<section class="hero-v2 py-5">
+  <div class="row g-4 align-items-center">
+    <!-- Left: Text -->
     <div class="col-lg-6" data-aos="fade-right">
-      <span class="badge rounded-pill px-3 py-2 mb-3 soft-pill">
-        <i class="fa-solid fa-location-dot me-2"></i>
-        Find your next stay
-      </span>
-      <h1 class="display-4 fw-bold mb-3 hero-title">
-        Explore the world with
-        <span class="brand-gradient">WanderLust</span>
+      <div class="hero-chip mb-3">
+        <span class="dot-live"></span>
+        Live • 120+ stays available this week
+      </div>
+
+      <h1 class="hero-heading mb-3">
+        Stay in places that
+        <span class="hero-highlight">feel like home</span>
       </h1>
-      <p class="hero-subtitle mb-4">
-        Hand-picked stays, cozy cabins, beach houses, and city lights –
-        book unique homes in seconds with a smooth, modern experience.
+
+      <p class="hero-text mb-4">
+        WanderLust helps you discover curated stays across beaches, cities, mountains and hidden gems –
+        with real reviews, secure booking and a smooth experience.
       </p>
+
       <div class="d-flex flex-wrap gap-3 mb-4">
-        <a href="/listings" class="btn btn-lg btn-primary px-4 shadow-glow">
-          <i class="fa-solid fa-compass me-2"></i> Browse Listings
+        <a href="/listings" class="btn btn-lg btn-hero-primary">
+          <i class="fa-solid fa-compass me-2"></i> Explore stays
         </a>
-        <a
-          href="/listings/new"
-          class="btn btn-lg btn-outline-light px-4 border-soft"
-        >
-          <i class="fa-solid fa-plus me-2"></i> Become a Host
+        <a href="/listings/new" class="btn btn-lg btn-hero-ghost">
+          <i class="fa-solid fa-house-chimney-window me-2"></i> List your place
         </a>
       </div>
 
-      <div class="d-flex flex-wrap gap-4 stats-row">
-        <div class="stat-card">
-          <h3 class="mb-0">1K+</h3>
-          <small>Happy travellers</small>
+      <div class="d-flex flex-wrap gap-4 hero-badges">
+        <div class="mini-stat">
+          <span class="mini-label">Guests this month</span>
+          <span class="mini-value">2,431</span>
         </div>
-        <div class="stat-card">
-          <h3 class="mb-0">250+</h3>
-          <small>Verified stays</small>
+        <div class="mini-stat">
+          <span class="mini-label">Average rating</span>
+          <span class="mini-value">
+            <i class="fa-solid fa-star text-warning me-1"></i>4.8
+          </span>
         </div>
-        <div class="stat-card">
-          <h3 class="mb-0">4.8</h3>
-          <small>Average rating</small>
+        <div class="mini-stat">
+          <span class="mini-label">Countries</span>
+          <span class="mini-value">18+</span>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-6" data-aos="fade-left">
-      <div class="hero-card-grid">
-        <div class="hero-card main-card">
-          <img
-            src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg"
-            alt="Cozy cabin"
-          />
-          <div class="hero-card-body">
-            <h5>Cozy Mountain Cabin</h5>
-            <p class="mb-1">Manali, India</p>
-            <span class="price">₹4,500 <small>/ night</small></span>
+    <!-- Right: Fancy cards -->
+    <div class="col-lg-6 position-relative" data-aos="fade-left">
+      <div class="hero-stack">
+        <div class="floating-card card-main">
+          <div class="card-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg"
+              alt="Cabin"
+            />
+          </div>
+          <div class="floating-body">
+            <h5>Cabin above the clouds</h5>
+            <p class="mb-1 text-muted-small">Manali • Entire cabin</p>
+            <p class="mb-0 price-lg">
+              ₹4,500
+              <span class="text-muted-small">/ night</span>
+            </p>
           </div>
         </div>
-        <div class="hero-card side-card" data-aos="zoom-in">
-          <img
-            src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg"
-            alt="Beach house"
-          />
-          <div class="hero-card-body">
-            <h6>Sea View Apartment</h6>
-            <span class="small text-muted">Goa, India</span>
-          </div>
+
+        <div class="floating-card card-tag-1" data-aos="zoom-in">
+          <i class="fa-solid fa-wifi me-2"></i> Fast WiFi
         </div>
-        <div class="hero-card side-card lower" data-aos="zoom-in">
-          <img
-            src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
-            alt="City loft"
-          />
-          <div class="hero-card-body">
-            <h6>Modern City Loft</h6>
-            <span class="small text-muted">Bengaluru, India</span>
+
+        <div class="floating-card card-tag-2" data-aos="zoom-in" data-aos-delay="150">
+          <i class="fa-solid fa-mug-hot me-2"></i> Breakfast included
+        </div>
+
+        <div class="floating-card card-tag-3" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fa-solid fa-shield-heart me-2"></i> Verified host
+        </div>
+
+        <div class="floating-card card-mini-profile" data-aos="fade-up">
+          <div class="avatar-circle">AK</div>
+          <div>
+            <p class="mb-0 text-muted-small">“Stayed here last winter –</p>
+            <p class="mb-0 text-muted-small">best view I've ever seen.”</p>
           </div>
         </div>
       </div>
@@ -81,79 +90,136 @@
   </div>
 </section>
 
-<section class="mt-5" data-aos="fade-up">
-  <div class="card border-0 shadow-soft search-card">
-    <div class="card-body p-4 p-md-5">
-      <h2 class="h4 mb-3">
-        <i class="fa-solid fa-magnifying-glass me-2"></i> Find your perfect stay
-      </h2>
-      <p class="text-muted mb-4">
-        Filter by location and category to quickly discover listings that match
-        your vibe.
-      </p>
-
-      <form class="row g-3" action="/listings" method="GET">
-        <div class="col-md-4">
-          <label class="form-label fw-semibold">Location</label>
-          <input
-            type="text"
-            class="form-control form-control-lg"
-            name="location"
-            placeholder="Search by city or country"
-          />
-        </div>
-        <div class="col-md-4">
-          <label class="form-label fw-semibold">Category</label>
-          <select class="form-select form-select-lg" name="category">
-            <option value="">Any</option>
-            <option value="Mountains">Mountains</option>
-            <option value="Beach">Beach</option>
-            <option value="City">City</option>
-            <option value="Forest">Forest</option>
-            <option value="Village">Village</option>
-          </select>
-        </div>
-        <div class="col-md-4 d-flex align-items-end">
-          <button type="submit" class="btn btn-primary btn-lg w-100 shadow-glow">
-            Search stays
-          </button>
-        </div>
-      </form>
+<!-- Gradient stats strip -->
+<section class="mt-4" data-aos="fade-up">
+  <div class="stats-strip">
+    <div class="stats-item">
+      <span class="label">Response time</span>
+      <span class="value">Under 5 min</span>
+    </div>
+    <div class="stats-item">
+      <span class="label">Cancellations</span>
+      <span class="value">Flexible policy</span>
+    </div>
+    <div class="stats-item">
+      <span class="label">Secure payments</span>
+      <span class="value">Protected by Stripe</span>
     </div>
   </div>
 </section>
 
+<!-- Scrollable destinations -->
 <section class="mt-5" data-aos="fade-up">
   <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2 class="h4 mb-0">Popular categories</h2>
-    <a href="/listings" class="text-decoration-none text-light">
-      View all listings <i class="fa-solid fa-arrow-right ms-1"></i>
+    <h2 class="section-title mb-0">Trending destinations</h2>
+    <a href="/listings" class="section-link">
+      View all <i class="fa-solid fa-arrow-right ms-1"></i>
     </a>
   </div>
 
-  <div class="row g-4">
-    <div class="col-6 col-md-3">
-      <div class="category-pill">
-        <i class="fa-solid fa-mountain-sun mb-2"></i>
-        <span>Mountains</span>
-      </div>
+  <div class="dest-scroll-wrapper">
+    <div class="dest-scroll">
+      <!-- Card 1 -->
+      <a href="/listings?location=Goa" class="dest-card">
+        <div class="dest-img">
+          <img
+            src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg"
+            alt="Goa"
+          />
+        </div>
+        <div class="dest-body">
+          <h5>Goa</h5>
+          <p>Beachfront stays & villas</p>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="/listings?location=Bengaluru" class="dest-card">
+        <div class="dest-img">
+          <img
+            src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
+            alt="Bengaluru"
+          />
+        </div>
+        <div class="dest-body">
+          <h5>Bengaluru</h5>
+          <p>City lofts & studios</p>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="/listings?location=Manali" class="dest-card">
+        <div class="dest-img">
+          <img
+            src="https://images.pexels.com/photos/750873/pexels-photo-750873.jpeg"
+            alt="Manali"
+          />
+        </div>
+        <div class="dest-body">
+          <h5>Manali</h5>
+          <p>Cabins & mountain views</p>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="/listings?location=Kerala" class="dest-card">
+        <div class="dest-img">
+          <img
+            src="https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg"
+            alt="Kerala"
+          />
+        </div>
+        <div class="dest-body">
+          <h5>Kerala</h5>
+          <p>Backwaters & retreats</p>
+        </div>
+      </a>
     </div>
-    <div class="col-6 col-md-3">
-      <div class="category-pill">
-        <i class="fa-solid fa-umbrella-beach mb-2"></i>
-        <span>Beach</span>
-      </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="mt-5" data-aos="fade-up">
+  <div class="row g-4 align-items-start">
+    <div class="col-lg-5">
+      <h2 class="section-title mb-3">How WanderLust works</h2>
+      <p class="text-muted-small mb-4">
+        Whether you're booking your next adventure or listing your own stay, we make the
+        process smooth, transparent and secure.
+      </p>
+      <a href="/register" class="btn btn-outline-light btn-sm rounded-pill px-3">
+        <i class="fa-solid fa-user-plus me-2"></i> Join as guest or host
+      </a>
     </div>
-    <div class="col-6 col-md-3">
-      <div class="category-pill">
-        <i class="fa-solid fa-city mb-2"></i>
-        <span>City</span>
-      </div>
-    </div>
-    <div class="col-6 col-md-3">
-      <div class="category-pill">
-        <i class="fa-solid fa-tree mb-2"></i>
-        <span>Forest</span>
+    <div class="col-lg-7">
+      <div class="steps-timeline">
+        <div class="step-item">
+          <div class="step-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div>
+            <h5>Browse verified listings</h5>
+            <p>Filter stays by location, category and price. View real photos & reviews.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+          <div>
+            <h5>Choose your dates</h5>
+            <p>See live availability and pick your perfect time to stay.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div>
+            <h5>Book securely</h5>
+            <p>We handle the boring stuff – secure payment, confirmations and reminders.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
