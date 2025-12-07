@@ -102,8 +102,8 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-// ✅ 404 handler – for all unknown routes
-app.all("*", (req, res, next) => {
+// ✅ 404 handler – for all unknown routes (fixed)
+app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
 });
 
@@ -119,7 +119,6 @@ const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`server is listening on port ${port}`);
 });
-
 
 
 
