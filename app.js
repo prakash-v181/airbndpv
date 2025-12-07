@@ -65,15 +65,27 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
-  crypto: {
-    secret: process.env.SECRET,
-  },
-  touchAfter: 24 * 3600,
+  collectionName: "sessions",         // optional, but nice to name it
+  touchAfter: 24 * 3600,              // same as before (1 day)
 });
 
-store.on("error", () => {
-  console.log("ERROR is MONGO SESSION STORE", err);
+store.on("error", (err) => {
+  console.log("ERROR in MONGO SESSION STORE", err);
 });
+
+
+// const store = MongoStore.create({
+//   mongoUrl: dbUrl,
+//   crypto: {
+//     secret: process.env.SECRET,
+//   },
+//   touchAfter: 24 * 3600,
+// });
+
+// store.on("error", () => {
+//   console.log("ERROR is MONGO SESSION STORE", err);
+// });
+
 
 const sessionOptions = {
   store,
@@ -86,6 +98,20 @@ const sessionOptions = {
     httpOnly: true,
   },
 };
+
+
+
+// const sessionOptions = {
+//   store,
+//   secret: process.env.SECRET,
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: {
+//     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+//     maxAge: 7 * 24 * 60 * 60 * 1000,
+//     httpOnly: true,
+//   },
+// };
 
 // app.get("/", (req, res) => {
 //   res.send("Hi, I am root");
