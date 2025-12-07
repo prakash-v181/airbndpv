@@ -1,132 +1,160 @@
 <% layout('layouts/boilerplate') %>
 
-<div class="py-5">
-  <!-- Hero section -->
-  <section class="row align-items-center mb-5">
-    <div class="col-md-6 mb-4 mb-md-0">
-      <h1 class="display-4 fw-bold mb-3">
-        Discover your next <span class="text-primary">WanderLust</span> stay
+<section class="hero-section py-5">
+  <div class="row align-items-center g-4">
+    <div class="col-lg-6" data-aos="fade-right">
+      <span class="badge rounded-pill px-3 py-2 mb-3 soft-pill">
+        <i class="fa-solid fa-location-dot me-2"></i>
+        Find your next stay
+      </span>
+      <h1 class="display-4 fw-bold mb-3 hero-title">
+        Explore the world with
+        <span class="brand-gradient">WanderLust</span>
       </h1>
-      <p class="lead text-muted mb-4">
-        Find unique stays, cozy homes, and unforgettable experiences across the world.
+      <p class="hero-subtitle mb-4">
+        Hand-picked stays, cozy cabins, beach houses, and city lights –
+        book unique homes in seconds with a smooth, modern experience.
       </p>
-      <a href="/listings" class="btn btn-primary btn-lg me-2">
-        Browse Listings
-      </a>
-      <a href="/listings/new" class="btn btn-outline-primary btn-lg">
-        List your property
-      </a>
-    </div>
+      <div class="d-flex flex-wrap gap-3 mb-4">
+        <a href="/listings" class="btn btn-lg btn-primary px-4 shadow-glow">
+          <i class="fa-solid fa-compass me-2"></i> Browse Listings
+        </a>
+        <a
+          href="/listings/new"
+          class="btn btn-lg btn-outline-light px-4 border-soft"
+        >
+          <i class="fa-solid fa-plus me-2"></i> Become a Host
+        </a>
+      </div>
 
-    <div class="col-md-6">
-      <div class="card border-0 shadow-lg">
-        <img
-          src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg"
-          class="card-img-top"
-          alt="Travel"
-        />
-        <div class="card-body">
-          <h5 class="card-title mb-1">Weekend Escape</h5>
-          <p class="card-text text-muted mb-0">
-            Handpicked stays with great reviews and stunning views.
-          </p>
+      <div class="d-flex flex-wrap gap-4 stats-row">
+        <div class="stat-card">
+          <h3 class="mb-0">1K+</h3>
+          <small>Happy travellers</small>
+        </div>
+        <div class="stat-card">
+          <h3 class="mb-0">250+</h3>
+          <small>Verified stays</small>
+        </div>
+        <div class="stat-card">
+          <h3 class="mb-0">4.8</h3>
+          <small>Average rating</small>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Search / filter row -->
-  <section class="mb-5">
-    <div class="card shadow-sm border-0">
-      <div class="card-body">
-        <form class="row g-3" action="/listings" method="GET">
-          <div class="col-md-4">
-            <label class="form-label fw-semibold">Location</label>
-            <input
-              type="text"
-              class="form-control"
-              name="location"
-              placeholder="Where are you going?"
-            />
-          </div>
-          <div class="col-md-4">
-            <label class="form-label fw-semibold">Category</label>
-            <select class="form-select" name="category">
-              <option value="">Any</option>
-              <option value="Mountains">Mountains</option>
-              <option value="Beach">Beach</option>
-              <option value="City">City</option>
-              <option value="Forest">Forest</option>
-              <option value="Village">Village</option>
-            </select>
-          </div>
-          <div class="col-md-4 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary w-100">
-              <i class="fa-solid fa-magnifying-glass me-2"></i> Search stays
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured cards (static demo) -->
-  <section class="mb-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="h4 mb-0">Popular stays</h2>
-      <a href="/listings" class="text-decoration-none">
-        View all <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div>
-
-    <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
+    <div class="col-lg-6" data-aos="fade-left">
+      <div class="hero-card-grid">
+        <div class="hero-card main-card">
           <img
             src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg"
-            class="card-img-top"
-            alt="Cabin"
+            alt="Cozy cabin"
           />
-          <div class="card-body">
-            <h5 class="card-title mb-1">Cozy Mountain Cabin</h5>
-            <p class="card-text text-muted mb-2">Manali, India</p>
-            <p class="mb-0 fw-semibold">₹4,500 <span class="text-muted">night</span></p>
+          <div class="hero-card-body">
+            <h5>Cozy Mountain Cabin</h5>
+            <p class="mb-1">Manali, India</p>
+            <span class="price">₹4,500 <small>/ night</small></span>
           </div>
         </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
+        <div class="hero-card side-card" data-aos="zoom-in">
           <img
-            src="https://images.pexels.com/photos/331692/pexels-photo-331692.jpeg"
-            class="card-img-top"
+            src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg"
             alt="Beach house"
           />
-          <div class="card-body">
-            <h5 class="card-title mb-1">Sea View Apartment</h5>
-            <p class="card-text text-muted mb-2">Goa, India</p>
-            <p class="mb-0 fw-semibold">₹6,800 <span class="text-muted">night</span></p>
+          <div class="hero-card-body">
+            <h6>Sea View Apartment</h6>
+            <span class="small text-muted">Goa, India</span>
           </div>
         </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
+        <div class="hero-card side-card lower" data-aos="zoom-in">
           <img
             src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg"
-            class="card-img-top"
             alt="City loft"
           />
-          <div class="card-body">
-            <h5 class="card-title mb-1">Modern City Loft</h5>
-            <p class="card-text text-muted mb-2">Bengaluru, India</p>
-            <p class="mb-0 fw-semibold">₹5,200 <span class="text-muted">night</span></p>
+          <div class="hero-card-body">
+            <h6>Modern City Loft</h6>
+            <span class="small text-muted">Bengaluru, India</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+
+<section class="mt-5" data-aos="fade-up">
+  <div class="card border-0 shadow-soft search-card">
+    <div class="card-body p-4 p-md-5">
+      <h2 class="h4 mb-3">
+        <i class="fa-solid fa-magnifying-glass me-2"></i> Find your perfect stay
+      </h2>
+      <p class="text-muted mb-4">
+        Filter by location and category to quickly discover listings that match
+        your vibe.
+      </p>
+
+      <form class="row g-3" action="/listings" method="GET">
+        <div class="col-md-4">
+          <label class="form-label fw-semibold">Location</label>
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            name="location"
+            placeholder="Search by city or country"
+          />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label fw-semibold">Category</label>
+          <select class="form-select form-select-lg" name="category">
+            <option value="">Any</option>
+            <option value="Mountains">Mountains</option>
+            <option value="Beach">Beach</option>
+            <option value="City">City</option>
+            <option value="Forest">Forest</option>
+            <option value="Village">Village</option>
+          </select>
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary btn-lg w-100 shadow-glow">
+            Search stays
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="mt-5" data-aos="fade-up">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="h4 mb-0">Popular categories</h2>
+    <a href="/listings" class="text-decoration-none text-light">
+      View all listings <i class="fa-solid fa-arrow-right ms-1"></i>
+    </a>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-6 col-md-3">
+      <div class="category-pill">
+        <i class="fa-solid fa-mountain-sun mb-2"></i>
+        <span>Mountains</span>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="category-pill">
+        <i class="fa-solid fa-umbrella-beach mb-2"></i>
+        <span>Beach</span>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="category-pill">
+        <i class="fa-solid fa-city mb-2"></i>
+        <span>City</span>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="category-pill">
+        <i class="fa-solid fa-tree mb-2"></i>
+        <span>Forest</span>
+      </div>
+    </div>
+  </div>
+</section>

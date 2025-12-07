@@ -113,6 +113,10 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { message });
 });
 
+app.get("/", (req, res) => {
+  res.render("home");
+});
+
 // Port for Render / local
 const port = process.env.PORT || 8080;
 
