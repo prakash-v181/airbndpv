@@ -13,6 +13,7 @@
       <% } %>
       <div class="card-body">
         <h3 class="card-title mb-2"><%= listing.title %></h3>
+
         <p class="text-muted mb-1">
           Owned by
           <span class="fw-semibold">
@@ -23,8 +24,13 @@
             <% } %>
           </span>
         </p>
+
         <p class="mb-2"><%= listing.description %></p>
-        <p class="mb-1 fw-semibold">₹<%= listing.price %></p>
+
+        <p class="mb-1 fw-semibold">
+          ₹<%= listing.price %>
+        </p>
+
         <p class="mb-0 text-muted">
           <%= listing.location %><% if (listing.country) { %>, <%= listing.country %><% } %>
         </p>
@@ -43,11 +49,9 @@
     </div>
   </div>
 
-  <!-- Side panel: actions + review form -->
+  <!-- Right column: edit/delete + review -->
   <div class="col-md-4">
-    <% 
-      // ✅ Check ownership safely:
-      // works if listing.owner is ObjectId OR populated user
+    <%
       let isOwner = false;
       if (currUser && listing.owner) {
         const ownerId = String(listing.owner._id || listing.owner);
@@ -75,7 +79,9 @@
         <h5 class="card-title mb-3">Leave a Review</h5>
 
         <% if (!currUser) { %>
-          <p class="text-muted">Please <a href="/login">log in</a> to leave a review.</p>
+          <p class="text-muted">
+            Please <a href="/login">log in</a> to leave a review.
+          </p>
         <% } else { %>
           <form
             class="needs-validation"

@@ -17,8 +17,6 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
-console.log(process.env.SECRET);
-
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
@@ -89,9 +87,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// ✅ HOME ROUTE – fancy landing page
+// ✅ HOME ROUTE – fancy landing
 app.get("/", (req, res) => {
-  res.render("home"); // views/home.ejs
+  res.render("home");
 });
 
 // Routers
@@ -110,14 +108,11 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { message });
 });
 
-// Port for Render / local
+// Port
 const port = process.env.PORT || 8080;
-
 app.listen(port, () => {
   console.log(`server is listening on port ${port}`);
 });
-
-
 
 // const express = require("express");
 // const app = express();
