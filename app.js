@@ -89,9 +89,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// ✅ SINGLE HOME ROUTE – when user opens main URL
+// ✅ HOME ROUTE – fancy landing page
 app.get("/", (req, res) => {
-  res.render("home"); // uses views/home.ejs
+  res.render("home"); // views/home.ejs
 });
 
 // Routers
@@ -99,7 +99,7 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-// ✅ 404 handler – for all unknown routes
+// 404 handler
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
 });
@@ -116,6 +116,7 @@ const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`server is listening on port ${port}`);
 });
+
 
 
 // const express = require("express");
